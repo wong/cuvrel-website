@@ -40,13 +40,13 @@ if (canvas && heroArt) {
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
-    const count = Math.max(32, Math.min(76, Math.round(width / 8)));
+    const count = Math.max(80, Math.min(190, Math.round(width / 10)));
     points = Array.from({ length: count }, (_, index) => {
       const angle = (index / count) * Math.PI * 2;
-      const radius = 0.2 + Math.random() * 0.28;
+      const radius = 0.38 + Math.random() * 0.48;
       return {
-        x: width * (0.5 + Math.cos(angle) * radius),
-        y: height * (0.5 + Math.sin(angle) * radius),
+        x: width * (0.73 + Math.cos(angle) * radius * Math.min(0.41, height / width * 0.78)),
+        y: height * (0.51 + Math.sin(angle) * radius * 0.47),
         phase: Math.random() * Math.PI * 2,
       };
     });
@@ -65,8 +65,8 @@ if (canvas && heroArt) {
         const dx = animated[i].x - animated[j].x;
         const dy = animated[i].y - animated[j].y;
         const distance = Math.hypot(dx, dy);
-        if (distance < 98) {
-          context.strokeStyle = `rgba(112, 190, 239, ${(1 - distance / 98) * 0.2})`;
+        if (distance < 132) {
+          context.strokeStyle = `rgba(112, 190, 239, ${(1 - distance / 132) * 0.18})`;
           context.lineWidth = 0.7;
           context.beginPath();
           context.moveTo(animated[i].x, animated[i].y);
