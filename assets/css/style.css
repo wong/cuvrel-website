@@ -69,3 +69,14 @@
 .hero-brand-name{display:flex;flex-direction:column;gap:3px;min-width:0}.hero-brand-name small{font:8px var(--mono);letter-spacing:.08em;color:#8796ac}.hero-brand-name b{font-size:14px;line-height:1.1;letter-spacing:-.02em}.hero-brand-name em{font:8px var(--mono);font-style:normal;color:#77869b;white-space:nowrap;letter-spacing:-.04em}.hero-brand-card:first-child .hero-brand-name b{color:#63baff}.hero-brand-arrow{margin-left:auto;align-self:flex-end;color:#72bafa;font-size:13px}
 @media(max-width:900px){.hero-brands{left:5vw;right:5vw;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;bottom:76px}.hero-brand-card{min-height:72px;padding:11px 13px}.hero-brand-name em{font-size:7px}.hero-bottom{bottom:22px}}
 @media(max-width:680px){.hero.section-wrap{min-height:1000px;height:1000px;max-height:none}.hero-copy{padding-bottom:0}.hero-meta{display:none}.hero-brands{left:20px;right:20px;bottom:76px;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.hero-brand-card{min-height:72px;padding:10px 9px;gap:8px;border-radius:11px}.brand-icon{width:26px;height:26px;flex-basis:26px;transform:scale(.85)}.hero-brand-name small{font-size:7px}.hero-brand-name b{font-size:12px}.hero-brand-name em{font-size:6px;letter-spacing:-.06em}.hero-brand-arrow{font-size:11px}.hero-bottom{bottom:17px}}
+
+/* Guard the cinematic layout against viewport overflow and keep every title line intact. */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.site-shell{width:100%;max-width:100%;overflow-x:clip}
+.hero.section-wrap{width:100vw;max-width:100%;margin-inline:0}
+.hero-copy{box-sizing:border-box;width:min(900px,55vw);max-width:100%;margin-left:clamp(40px,6vw,120px);padding-right:24px}
+.hero h1{max-width:100%;font-size:clamp(64px,6.3vw,126px);line-height:1.02;letter-spacing:-.075em}
+.hero-title-line{display:block;white-space:nowrap}
+.hero-art .globe{width:clamp(390px,42vw,760px);max-width:68vw;aspect-ratio:1;height:auto}
+@media(max-width:1100px){.hero-copy{width:min(680px,68vw);margin-left:5vw}.hero h1{font-size:clamp(60px,7.2vw,96px)}.hero-art .globe{left:78%;width:min(57vw,62vh);max-width:64vw}.hero-art .orbit{left:78%}}
+@media(max-width:680px){.hero.section-wrap{width:100%;max-width:100%;min-height:1000px;height:1000px}.hero-copy{width:100%;max-width:100%;margin:0;padding:70px 20px 0}.hero h1{font-size:clamp(44px,12.5vw,76px);letter-spacing:-.078em}.hero-title-line{white-space:nowrap}.hero-art .globe{left:78%;top:69%;width:min(78vw,390px);max-width:78vw}.hero-art .orbit{left:78%;top:69%}}
